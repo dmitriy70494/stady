@@ -1,26 +1,21 @@
-package ru.dirbez;
+package dirbez;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.effect.BlendMode;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.input.KeyCombination;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class ManagerBook  extends Application implements EventHandler<ActionEvent> {
+public class HardTestingIIB  extends Application implements EventHandler<ActionEvent> {
 
-    private static final String ORDER_BUTTON = "заявка";
-    private static final String CALL_BUTTON = "звонок";
-    private static final String DIRBEZ = "Книга менеджера по продажам www.dirbez.ru";
+    private static final String ORDER_BUTTON = "запустить";
+    private static final String DIRBEZ = "База работы www.dirbez.ru";
 
     private void showAlert(String message, String header) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -36,11 +31,12 @@ public class ManagerBook  extends Application implements EventHandler<ActionEven
         border.setTop(new MenuBuilder().createMenu());
         border.setLeft(
                 this.createVBox(
-                        this.createButtons(ORDER_BUTTON, this),
-                        this.createButtons(CALL_BUTTON, this)
+                        this.createButtons(ORDER_BUTTON, this)
                 )
         );
-        border.setCenter(new TableBuilder().createTable());
+        Client client = new Client();
+        client.setId(5);
+        border.setCenter(new TableBuilder().createTable(Logic.getInstance().getAll()));
         stage.setScene(new Scene(border, 1000, 700));
         stage.setTitle(DIRBEZ);
         stage.setResizable(false);
@@ -68,5 +64,6 @@ public class ManagerBook  extends Application implements EventHandler<ActionEven
     @Override
     public void handle(ActionEvent event) {
         System.out.println(((Button)event.getTarget()).getText());
+        new dirbez.jobstore.StartUI().init();
     }
 }

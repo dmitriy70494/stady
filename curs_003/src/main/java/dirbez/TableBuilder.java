@@ -1,4 +1,4 @@
-package ru.dirbez;
+package dirbez;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,19 +19,19 @@ public class TableBuilder {
         table.setLayoutY(50);
         table.setTableMenuButtonVisible(true);
         table.setCursor(Cursor.TEXT);
-        table.setTooltip(new Tooltip("Задачи менеджера"));
+        table.setTooltip(new Tooltip("Работа"));
         table.setStyle("-fx-font: 14pt Arial;");
         table.setPrefWidth(500);
         table.setPrefHeight(200);
         table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        TableColumn nameCol = new TableColumn("Название");
+        TableColumn nameCol = new TableColumn("заголовок");
         nameCol.setCellValueFactory(new PropertyValueFactory<Task,String>("name"));
         nameCol.setPrefWidth(250);
         nameCol.setResizable(false);
         nameCol.setSortable(true);
-        TableColumn resortCol = new TableColumn("Клиент");
+        TableColumn resortCol = new TableColumn("работа");
         resortCol.setCellValueFactory(new PropertyValueFactory<Task, Client>("client"));
-        TableColumn categoryCol = new TableColumn("Описание");
+        TableColumn categoryCol = new TableColumn("дата");
         categoryCol.setCellValueFactory(new PropertyValueFactory<Task,String>("description"));
         table.setItems(hotels);
         table.getColumns().addAll(nameCol, resortCol, categoryCol);

@@ -1,4 +1,4 @@
-package ru.dirbez;
+package dirbez;
 
 import java.util.List;
 

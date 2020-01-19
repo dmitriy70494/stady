@@ -1,4 +1,4 @@
-package ru.dirbez;
+package dirbez;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -84,7 +84,7 @@ public class MenuBuilder {
 
         Scene secondScene = new Scene(grid, 370, 200);
 
-        Text scenetitle = new Text("Ежедневник менеджера по продажам");
+        Text scenetitle = new Text("Парсер базы работы");
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         grid.add(scenetitle, 0, 0, 2, 1);
 

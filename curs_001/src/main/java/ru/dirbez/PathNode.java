@@ -1,6 +1,5 @@
 package ru.dirbez;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PathNode {

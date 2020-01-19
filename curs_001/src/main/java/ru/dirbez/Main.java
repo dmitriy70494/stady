@@ -23,7 +23,7 @@ public class Main{
 
     public static void main(String[] args) {
         long total = 0;
-        Main main = new Main(6, 6);
+        Main main = new Main(8, 8);
         Сhessboard chessboard = new Сhessboard(main.getWeight(), main.getHeight(), new Knight());
         for (int y = 0; y < main.getHeight(); y++) {
             for (int x = 0; x < main.getHeight(); x++) {
